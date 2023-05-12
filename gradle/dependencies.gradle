@@ -1,0 +1,25 @@
+ext {
+    
+    versions = [
+        compileSdk: 29,
+        minSdk: 21,
+        targetSdk: 29,
+    ]
+
+    depsVersions = [
+
+            foundation: "0.1.4.89e97fc",
+            location: "7.5.0",
+            navi: "6.2.0-SNAPSHOT",
+            trackx: "1.1.0"
+    ]
+
+    deps = [
+            foundation: "com.tencent.openmap:foundation:${depsVersions.foundation}",
+            location: "com.tencent.map.geolocation:TencentLocationSdk-openplatform:${depsVersions.location}",
+            navi: "com.tencent.map:tencent-map-nav-sdk-core:${depsVersions.navi}",
+            trackx: "com.tencent.map:tencent-map-trackx:${depsVersions.trackx}",
+            trackxSupportNavLoc: "com.tencent.map:tencent-map-trackx-support-nav-loc:${depsVersions.trackx}",
+            trackxSupportStdLoc: "com.tencent.map:tencent-map-trackx-support-std-loc:${depsVersions.trackx}"
+    ]
+}

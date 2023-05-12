@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TrackxUploadActivity">
+
+    <Button
+        android:id="@+id/start_service_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="开启前台服务"
+        />
+
+    <Button
+        android:id="@+id/end_service_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭前台服务"
+        />
+
+    <Button
+        android:id="@+id/start_trace_button"
+        app:layout_constraintTop_toBottomOf="@+id/end_service_button"
+        app:layout_constraintLeft_toLeftOf="@+id/start_service_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始轨迹上报"
+        />
+
+    <Button
+        android:id="@+id/end_trace_button"
+        app:layout_constraintTop_toBottomOf="@+id/end_service_button"
+        app:layout_constraintTop_toTopOf="@+id/start_trace_button"
+        app:layout_constraintLeft_toLeftOf="@+id/end_service_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止轨迹上报"
+        />
+
+    <Button
+        android:id="@+id/采集频率"
+        app:layout_constraintTop_toBottomOf="@+id/end_trace_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置采集频率"
+        />
+
+    <Button
+        android:id="@+id/上报频率"
+        app:layout_constraintTop_toBottomOf="@+id/采集频率"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置上报频率"
+        />
+
+    <Button
+        android:id="@+id/最大缓存条数"
+        app:layout_constraintTop_toBottomOf="@+id/上报频率"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置最大缓存条数"
+        />
+
+    <Button
+        android:id="@+id/定位类型"
+        app:layout_constraintTop_toBottomOf="@+id/最大缓存条数"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置定位类型"
+        />
+
+    <TextView
+        android:id="@+id/lastest_point_text"
+        app:layout_constraintTop_toBottomOf="@+id/定位类型"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:maxLines="6"
+        android:scrollbars="vertical"
+        android:hint="落库轨迹将展示在这~"
+        />
+
+    <TextView
+        android:id="@+id/upload_result_text"
+        app:layout_constraintTop_toBottomOf="@+id/lastest_point_text"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#00FF00"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:hint="上报结果将展示在这~"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
