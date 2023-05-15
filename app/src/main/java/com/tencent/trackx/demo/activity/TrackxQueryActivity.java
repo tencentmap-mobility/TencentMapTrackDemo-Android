@@ -60,7 +60,9 @@ public class TrackxQueryActivity extends AppCompatActivity implements View.OnCli
                         @Override
                         public void onQueryResult(QueryResult result) {
                             Log.i(TAG, "onQueryResult: " + result.toString());
-                            mQueryResultText.setText(result.getQueryInfo().getResult().toString());
+                            if (result.getQueryInfo().getResult() != null) {
+                                mQueryResultText.setText(result.getQueryInfo().getResult().toString());
+                            }
                         }
                     });
             // 测试取消查询功能
