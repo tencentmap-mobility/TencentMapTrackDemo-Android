@@ -8,10 +8,10 @@ ext {
 
     depsVersions = [
 
-            foundation: "0.1.6.f419064",
+            foundation: "0.2.0.d5715b8",
             location: "7.5.2",
-            navi: "6.2.0.20230515205609-SNAPSHOT",
-            trackx: "1.1.1"
+            navi: "6.4.0",
+            trackx: "1.1.5"
     ]
 
     deps = [
