@@ -1,4 +1,5 @@
 <resources>
+    <string name="desc_personal_info">个人信息处理规则</string>
     <string name="desc_upload_trace">轨迹上报</string>
     <string name="desc_query_trace">轨迹查询</string>
 </resources>

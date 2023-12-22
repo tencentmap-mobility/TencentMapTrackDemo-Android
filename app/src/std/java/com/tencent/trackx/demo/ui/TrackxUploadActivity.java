@@ -1,4 +1,4 @@
-package com.tencent.trackx.demo.activity;
+package com.tencent.trackx.demo.ui;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -26,15 +26,13 @@ import com.tencent.trackx.api.trace.TraceConfig;
 import com.tencent.trackx.api.trace.TraceEventCallback;
 import com.tencent.trackx.api.trace.TracePointSource;
 import com.tencent.trackx.api.trace.Tracer;
-import com.tencent.trackx.demo.BuildConfig;
 import com.tencent.trackx.demo.R;
 import com.tencent.trackx.demo.SingletonHelper;
-import com.tencent.trackx.support.nav.loc.TrackerXNavLocation;
 import com.tencent.trackx.support.std.loc.TrackerXStandardLocation;
 
 public class TrackxUploadActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "TrackxUpload";
+    private static final String TAG = "TrackXInit";
 
     private TrackerX mTrackX;
     private Tracer mTracer;
@@ -81,16 +79,11 @@ public class TrackxUploadActivity extends AppCompatActivity implements View.OnCl
             if (mTracer == null) {
                 mTracer = mTrackX.tracer(TerminalOptions.newBuilder("your service id", "your entity name")
                         .entityId("your entity id")
+                        .entityFields("{\"address\":\"beijing\"}")
                         .build());
             }
-
-            if (BuildConfig.FLAVOR.equals("std")) {
-                // 定位轨迹源
-                mTracer.setTracePointSource(TrackerXStandardLocation.create(getApplicationContext()));
-            } else {
-                // 导航轨迹源
-                mTracer.setTracePointSource(TrackerXNavLocation.create(getApplicationContext()));
-            }
+            // 导航轨迹源
+            mTracer.setTracePointSource(TrackerXStandardLocation.create(getApplicationContext()));
 
             mTracer.setConfig(traceConfig);
             mTracer.addTraceEventCallback(traceEventCallback);
@@ -99,6 +92,7 @@ public class TrackxUploadActivity extends AppCompatActivity implements View.OnCl
             if (mTracer == null) {
                 mTracer = mTrackX.tracer(TerminalOptions.newBuilder("your service id", "your entity name")
                         .entityId("your entity id")
+                        .entityFields("{\"address\":\"beijing\"}")
                         .build());
             }
             mTracer.endTrace(true);
@@ -106,6 +100,7 @@ public class TrackxUploadActivity extends AppCompatActivity implements View.OnCl
             if (mTracer == null) {
                 mTracer = mTrackX.tracer(TerminalOptions.newBuilder("your service id", "your entity name")
                         .entityId("your entity id")
+                        .entityFields("{\"address\":\"beijing\"}")
                         .build());
             }
             mTracer.startService(createForegroundNotification());
@@ -113,6 +108,7 @@ public class TrackxUploadActivity extends AppCompatActivity implements View.OnCl
             if (mTracer == null) {
                 mTracer = mTrackX.tracer(TerminalOptions.newBuilder("your service id", "your entity name")
                         .entityId("your entity id")
+                        .entityFields("{\"address\":\"beijing\"}")
                         .build());
             }
             mTracer.stopService();

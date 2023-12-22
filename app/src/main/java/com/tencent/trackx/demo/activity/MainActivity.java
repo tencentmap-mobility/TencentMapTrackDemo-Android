@@ -97,9 +97,9 @@ public class MainActivity extends BaseActivity {
 
         mTrackX = SingletonHelper.getInstance(getApplicationContext());
         mTrackX.init(InitConfig.newBuilder()
-                .appKey("your app key")
+                .appKey("your develop key")
                 .deviceId("your device id")
-                .secretKey("your secret key")
+                .secretKey("your develop secret key")
                 .debuggable(true)
                 .build(), new InitCallback() {
             @Override

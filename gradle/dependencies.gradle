@@ -11,7 +11,7 @@ ext {
             foundation: "0.2.0.d5715b8",
             location: "7.5.2",
             navi: "6.4.0",
-            trackx: "1.1.5"
+            trackx: "1.1.6"
     ]
 
     deps = [
